@@ -104,48 +104,69 @@
 
 # calculate_guests("Big company of 15 dudes")
 
-str = "Hello, 9.75 people"
-res = []
-print(str.split())
-for num in str.split():
-    if (num.isnumeric()):
-        res.append(num)
+# str = "Hello, 9.75 people"
+# res = []
+# print(str.split())
+# for num in str.split():
+#     if (num.isnumeric()):
+#         res.append(num)
 
-print(res)
-
-
-def calculate_guests(guests_input: str) -> int:
-    number = ""
-    is_decimal = False
-
-    for char in guests_input:
-        if (char.isdigit()):
-            number += char
-        elif char == "." and not is_decimal:
-            is_decimal = True
-            number += char
-        else:
-            if (number):
-                break
-            is_decimal = False
-
-    return int(float(number)) if number and number != "0" else "not a number"
+# print(res)
 
 
-print(calculate_guests("I think 5 guests"))
-print(calculate_guests("Hello, 9.75 people"))
-print(calculate_guests("There will be 7 or 9 guys"))
+# def calculate_guests(guests_input: str) -> int:
+#     number = ""
+#     is_decimal = False
+
+#     for char in guests_input:
+#         if (char.isdigit()):
+#             number += char
+#         elif char == "." and not is_decimal:
+#             is_decimal = True
+#             number += char
+#         else:
+#             if (number):
+#                 break
+#             is_decimal = False
+
+#     return int(float(number)) if number and number != "0" else "not a number"
 
 
-def calculate_guests2(guests_input: str) -> int | str:
-    number_str = ""
-    for char in guests_input:
-        if char.isnumeric():
-            number_str += char
-        elif len(number_str) != 0:
-            break
-    return (
-        int(number_str)
-        if len(number_str) > 0 and int(number_str) != 0
-        else "not a number"
-    )
+# print(calculate_guests("I think 5 guests"))
+# print(calculate_guests("Hello, 9.75 people"))
+# print(calculate_guests("There will be 7 or 9 guys"))
+
+
+# def calculate_guests2(guests_input: str) -> int:
+#     number_str = ""
+#     for char in guests_input:
+#         if char.isnumeric():
+#             number_str += char
+#         elif len(number_str) != 0:
+#             break
+#     return (
+#         int(number_str)
+#         if len(number_str) > 0 and int(number_str) != 0
+#         else "not a number"
+#     )
+
+
+# def hello_dear_man(a: int = 0, b: int = 0, *args, **kwargs):
+#     print('args', args)
+#     print("kwargs", kwargs)
+
+#     print(a+b)
+
+
+# hello_dear_man()
+# hello_dear_man(2, 3)
+# hello_dear_man(2, 3, 4, 5, num=999)
+
+def print_message(username: str, message: str) -> str:
+    return f"""
+        Message from {username}:
+        {message}
+    """
+
+
+print(print_message("ad", 'heeey'))
