@@ -162,11 +162,11 @@
 # hello_dear_man(2, 3)
 # hello_dear_man(2, 3, 4, 5, num=999)
 
-def print_message(username: str, message: str) -> str:
-    return f"""
-        Message from {username}:
-        {message}
-    """
+# def print_message(username: str, message: str) -> str:
+#     return f"""
+#         Message from {username}:
+#         {message}
+#     """
 
 
-print(print_message("ad", 'heeey'))
+# print(print_message("ad", 'heeey'))

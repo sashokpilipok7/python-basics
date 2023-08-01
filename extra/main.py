@@ -32,3 +32,37 @@ def product_list(numbers: list) -> list:
 
 
 print(product_list([1, 5, 2]))
+
+
+def row_weights(row: list) -> list:
+    left = []
+    right = []
+    for idx, item in enumerate(row):
+        left.append(item) if idx % 2 == 0 else right.append(item)
+    return [sum(left), sum(right)]
+
+
+def who_is_online(friends: list) -> dict:
+    result_dict = {}
+    for friend in friends:
+        username = friend["username"]
+        group = "online"
+        if friend["status"] == "online" and friend["lastActivity"] > 10:
+            group = "away"
+        elif friend["status"] == "offline":
+            group = "offline"
+
+        if group not in result_dict:
+            result_dict[group] = [username]
+        else:
+            result_dict[group].append(username)
+    return result_dict
+
+
+def count_matching_socks(colors: list) -> int:
+    result = {}
+    for item in colors:
+        result[item] = 1 if item not in result else result[item] + 1
+
+    pairs = sum(result) // 2
+    return pairs
